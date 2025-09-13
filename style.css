@@ -1,0 +1,380 @@
+/* Reset & Base Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', Arial, sans-serif;
+    background-color: #f8f3ef;
+    color: #273440;
+    line-height: 1.6;
+    overflow-x: hidden;
+}
+
+.container {
+    max-width: 75rem;
+    margin: 0 auto 0 0;
+    padding: 0 clamp(1rem, 4vw, 2rem) 0 clamp(2rem, 6vw, 4rem);
+}
+
+/* Navbar - Flexbox Layout */
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 15px 60px;
+    background: #fff;
+    border-bottom: 1px solid #ddd;
+    font-family: Arial, sans-serif;
+}
+
+.logo img {
+    height: 40px;
+}
+
+.nav-links {
+    display: flex;
+    align-items: center;
+    gap: 30px;
+}
+
+.nav-links a {
+    text-decoration: none;
+    color: #333;
+    font-size: 16px;
+    transition: color 0.3s;
+}
+
+.nav-links a:hover {
+    color: #000;
+}
+
+/* 
+TOUGHEST MOMENT: .signup class took the longest to get right because achieving 
+the perfect pill-shaped button with proper padding and hover effects while maintaining 
+responsiveness across all screen sizes required multiple iterations of clamp values 
+and careful consideration of the visual hierarchy.
+*/
+.signup {
+    background: #000 !important;
+    color: #fff !important;
+    padding: 8px 18px;
+    border-radius: 30px;
+    font-weight: bold;
+}
+
+/* Main Hero Section - CSS Grid Layout */
+.main {
+    padding: clamp(2rem, 8vw, 4rem) 0;
+}
+
+.hero-section {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: clamp(2rem, 8vw, 4rem);
+    align-items: center;
+    min-height: 70vh;
+}
+
+.hero-content {
+    display: grid;
+    grid-template-rows: auto auto auto;
+    gap: clamp(1rem, 4vw, 2rem);
+}
+
+/* Hero Title Styling */
+.hero-title {
+    font-size: clamp(2rem, 8vw, 4rem);
+    font-weight: 700;
+    line-height: 1.1;
+    margin-bottom: 1rem;
+}
+
+.unlock-text {
+    font-family: 'Playfair Display', cursive;
+    font-style: italic;
+    font-size: clamp(2rem, 6vw, 3.75rem);
+    background: linear-gradient(45deg, #4b246e, #e67e22);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.gradient-text {
+    font-family: 'Merriweather', serif;
+    font-weight: 900;
+    font-size: clamp(2.5rem, 8vw, 5rem);
+    line-height: 1.1;
+    background: url('https://www.transparenttextures.com/patterns/arabesque.png'),
+                linear-gradient(90deg, #4b246e, #e67e22);
+    background-size: cover;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    margin: 0;
+}
+
+.hero-description {
+    font-family: 'Merriweather', sans-serif;
+    font-size: clamp(1rem, 2.5vw, 1.125rem);
+    max-width: 43.75rem;
+    margin: 0 0 2rem 0;
+    line-height: 1.6;
+    color: #444;
+    text-align: left;
+}
+
+/* NFT Cards - CSS Grid Layout */
+.nft-cards {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: clamp(1rem, 3vw, 1.875rem);
+    margin-top: 2rem;
+    justify-items: center;
+}
+
+.nft-card {
+    background: #fff;
+    border-radius: 7.5rem 7.5rem 1.875rem 1.875rem;
+    width: clamp(10rem, 25vw, 12.5rem);
+    padding: clamp(1rem, 3vw, 1.25rem);
+    box-shadow: 0px 0.25rem 0.75rem rgba(0, 0, 0, 0.08);
+    display: grid;
+    grid-template-rows: auto auto auto auto;
+    justify-items: center;
+    overflow: hidden;
+    transition: all 0.3s ease;
+    cursor: pointer;
+}
+
+.nft-card:hover {
+    transform: translateY(-0.3125rem) scale(1.02);
+    box-shadow: 0 0.5rem 1.5625rem rgba(0, 0, 0, 0.15);
+}
+
+.nft-image img {
+    width: clamp(4rem, 15vw, 7.5rem);
+    margin: clamp(1rem, 3vw, 1.25rem) 0;
+    object-fit: contain;
+}
+
+.nft-title {
+    margin: 0.625rem 0 0 0;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: 700;
+    color: #222;
+}
+
+.nft-artist {
+    margin: 0.3125rem 0 1.25rem 0;
+    font-size: clamp(0.75rem, 2vw, 0.875rem);
+    color: #777;
+}
+
+.nft-price {
+    background: #f8f3ef;
+    width: 100%;
+    padding: clamp(0.5rem, 2vw, 0.75rem) 0;
+    font-weight: bold;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    color: #444;
+    border-radius: 0 0 1.875rem 1.875rem;
+    margin: 0;
+    text-align: center;
+}
+
+/* Hero Visual Section - CSS Grid Layout */
+.hero-visual {
+    display: grid;
+    place-items: center;
+    height: 100%;
+}
+
+.visual-container {
+    position: relative;
+    width: clamp(25rem, 60vw, 43.75rem);
+    height: clamp(25rem, 60vw, 43.75rem);
+    background: #f8f3ef;
+    overflow: hidden;
+    display: grid;
+    place-items: center;
+}
+
+.stone-img {
+    position: absolute;
+    top: clamp(1rem, 3vw, 1.25rem);
+    left: clamp(10rem, 35vw, 15.625rem);
+    width: clamp(8rem, 20vw, 12.5rem);
+    z-index: 3;
+}
+
+.hand-img {
+    position: absolute;
+    bottom: clamp(4rem, 12vw, 6.25rem);
+    right: clamp(2rem, 6vw, 3.125rem);
+    width: clamp(18rem, 40vw, 28.125rem);
+    transform: rotate(15deg);
+    z-index: 2;
+}
+
+.side-text {
+    position: absolute;
+    right: clamp(-12rem, -25vw, -10.625rem);
+    top: 35%;
+    transform: translateY(-50%) rotate(90deg);
+    font-size: clamp(4rem, 12vw, 6.25rem);
+    font-weight: bold;
+    color: rgba(200, 190, 170, 0.3);
+    letter-spacing: 0.3125rem;
+    font-family: 'Merriweather', serif;
+    z-index: 1;
+    user-select: none;
+    pointer-events: none;
+}
+
+.start-btn {
+    position: absolute;
+    left: clamp(1.5rem, 5vw, 2.5rem);
+    bottom: clamp(8rem, 20vw, 11.25rem);
+    background: #333;
+    padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.5rem, 4vw, 1.875rem);
+    border: none;
+    border-radius: 2.5rem;
+    font-size: clamp(1rem, 3vw, 1.25rem);
+    font-weight: bold;
+    color: white;
+    cursor: pointer;
+    box-shadow: 0 0.375rem 0.75rem rgba(0, 0, 0, 0.2);
+    display: grid;
+    grid-template-columns: auto auto;
+    align-items: center;
+    gap: 0.5rem;
+    z-index: 3;
+    transition: all 0.3s ease;
+}
+
+.start-btn::after {
+    content: "▶";
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+}
+
+.start-btn:hover {
+    background: #555;
+    transform: scale(1.1);
+}
+
+.barcode-img {
+    position: absolute;
+    bottom: clamp(2rem, 6vw, 3.125rem);
+    right: clamp(2rem, 6vw, 3.125rem);
+    width: clamp(15rem, 35vw, 28.125rem);
+    z-index: 2;
+}
+
+/* Footer - CSS Grid Layout */
+.footer {
+    background-color: #d8d1cb;
+    border-top: 0.125rem solid #daa520;
+    padding: clamp(1rem, 4vw, 2rem) 0;
+    margin-top: clamp(2rem, 6vw, 4rem);
+}
+
+.footer-nav {
+    display: grid;
+    grid-template-columns: repeat(9, 1fr);
+    justify-items: center;
+    align-items: center;
+    gap: 0;
+    text-align: center;
+    max-width: 70rem;
+    margin: 0 auto;
+}
+
+.footer-star {
+    width: clamp(1.5rem, 4vw, 2.5rem);
+    height: clamp(1.5rem, 4vw, 2.5rem);
+}
+
+.footer-link {
+    color: #273440;
+    text-decoration: none;
+    font-weight: 600;
+    font-size: clamp(0.875rem, 2.5vw, 1.125rem);
+    transition: all 0.3s ease;
+    padding: 0.5rem;
+}
+
+.footer-link:hover {
+    color: #daa520;
+    transform: translateY(-0.125rem);
+}
+
+/* Mobile Responsive Design */
+@media (max-width: 768px) {
+    .navbar {
+        flex-direction: column;
+        padding: 15px 20px;
+        gap: 15px;
+    }
+    
+    .nav-links {
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px;
+    }
+    
+    .hero-section {
+        grid-template-columns: 1fr;
+        gap: 2rem;
+    }
+    
+    .hero-visual {
+        order: -1;
+    }
+    
+    .nft-cards {
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+    }
+    
+    .visual-container {
+        width: clamp(20rem, 80vw, 30rem);
+        height: clamp(20rem, 80vw, 30rem);
+    }
+    
+    .footer-nav {
+        grid-template-columns: 1fr;
+        grid-template-rows: repeat(9, auto);
+        gap: 1rem;
+        max-width: 100%;
+    }
+    
+    .container {
+        padding: 0 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .navbar {
+        padding: 10px 15px;
+    }
+    
+    .nav-links {
+        gap: 10px;
+        font-size: 14px;
+    }
+    
+    .signup {
+        padding: 6px 12px;
+        font-size: 14px;
+    }
+    
+    .hero-title {
+        text-align: center;
+    }
+    
+    .hero-description {
+        text-align: center;
+    }
+}
